@@ -62,7 +62,7 @@ const EmailVerificationPage = () => {
     //  Remove this handle. This is for show.
     const handleSignOut = () => {
         signout();
-        navigate("/login");
+        navigate("/");
     };
 
     // Auto submit when all fields are filled
