@@ -58,6 +58,12 @@ const EmailVerificationPage = () => {
         }
     };
 
+    //  Remove this handle. This is for show.
+    const handleSignOut = () => {
+        signout();
+        navigate("/login");
+    };
+
     // Auto submit when all fields are filled
     useEffect(() => {
         if (code.every((digit) => digit !== "")) {
@@ -112,6 +118,15 @@ const EmailVerificationPage = () => {
                         {isLoading ? "Verifying..." : "Verify Email"}
                     </motion.button>
                 </form>
+                {/*  Remove this block. This is for show if users' account passed the verificationTokenDate */}
+                <div className="px-8 py-4 bg-gray-900/50 flex justify-center">
+                    <button
+                        className="text-sky-400 hover:underline"
+                        onClick={handleSignOut}
+                    >
+                        Sign out
+                    </button>
+                </div>
             </motion.div>
         </div>
     );
