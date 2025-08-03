@@ -15,7 +15,7 @@ Mailtrap demo domain does not work due to limited mails and time. So you will en
 
 The app will, obviously, not send a verification email message to your email so you will never encounter a verification page... however you can navigate to that page "/verify-email" if you'd like to visit that page.
 
-You can still sign up with a random email regarless of errors. **DO NOT sign up with any of your credentials or sensitive credentials because it will be stored in the MongoDB**
+You can still sign up with a random email regardless of errors. Just sign up and go back the main/home page and sign in. **DO NOT sign up with any of your credentials or sensitive credentials because it will be stored in the MongoDB**
 
 Again, this is just for show. If anyone wants to copy this project, you will need to encapsulate \<EmailVerificationPage /\> with \<RedirectAuthenticatedUser\> in the App.jsx.
 
