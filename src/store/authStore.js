@@ -4,7 +4,7 @@ import axios from "axios";
 const API_URL =
 	import.meta.env.MODE === "development"
 		? "http://localhost:3001/api/auth"
-		: "https://node-mongodb-backend.fly.dev/api/auth";
+		: `${import.meta.env.VITE_BACKEND_URL}/api/auth`;
 
 axios.defaults.withCredentials = true;
 
