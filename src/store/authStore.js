@@ -1,14 +1,22 @@
 import { create } from "zustand"; // state management
 import axios from "axios";
 
-const API_URL =
-	import.meta.env.MODE === "development"
-		? "http://localhost:3001/api/auth"
-		: `${import.meta.env.VITE_BACKEND_URL}/api/auth`;
+const API_URL = `${import.meta.env.VITE_BACKEND_URL}/api/auth`;
+const FLY_TOKEN = import.meta.env.VITE_FLY_TOKEN;
 
 axios.defaults.withCredentials = true;
+axios.defaults.baseURL = API_URL;
+
+const fly = axios.create({
+	baseURL: API_URL,
+	headers: {
+		Authorization: `Bearer ${FLY_TOKEN}`,
+		"Content-Type": "application/json",
+	},
+});
 
 export const useAuthStore = create((set) => ({
+	token: FLY_TOKEN,
 	user: null,
 	isAuthenticated: false,
 	error: null,
